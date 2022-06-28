@@ -1,0 +1,87 @@
+//cf7 /form
+.wpcf7{
+    &-form, .form{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 0 $pad-side--phone;
+    
+        font-family: $font-third;
+    
+    
+        input[type="text"], input[type="email"], input[type="tel"]{
+            height: 32px;
+            padding: 4px 4px 4px 12px;
+            width: 100%;
+            max-width: 480px;
+            transition: .2s all ease-out;
+
+            &:hover{
+                box-shadow: 0 0 1px 1px $clr-prim--saturated;       
+                &::placeholder{
+                    color: $clr-prim--saturated;          
+                }
+            }
+    
+            &::placeholder{
+                transition: .2s all ease-out;
+                font-family: $font-second;           
+            }
+
+            &:active, &:focus{
+                background-color: $clr-prim-90;
+                &::placeholder{
+                    transform: translateY(32px);                
+                }
+            }
+        }
+    
+        textarea{
+            padding: 4px 4px 4px 12px;
+            width: 100%;
+            max-width: 480px;
+
+            &:hover{
+                box-shadow: 0 0 1px 1px $clr-prim--saturated;       
+                &::placeholder{
+                    color: $clr-prim--saturated;          
+                }
+            }
+    
+            &::placeholder{
+                transition: .2s all ease-out;            
+            }
+    
+            &:active, &:focus{
+                background-color: $clr-prim-90;
+                &::placeholder{
+                    transform: translateY(32px);                
+                }
+            }
+        }
+    
+        &__input-wrapper{
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-flow: column;
+            gap: 4px;
+        }
+    }
+    
+    &-submit{
+        align-self: center;
+    }
+
+    &-response-output{
+        max-width: 400px;
+    }
+
+    &-not-valid-tip{
+        font-size: 15px;
+        text-align: right;
+        color: $clr-error;
+    }
+}

@@ -1,0 +1,28 @@
+/* Modify to fit your design grid or delete with 'grids-mixins' */
+//gaps size depending on the screen width
+$gap-col--desk : 48px;
+$gap-row--desk : 48px;
+$gap-col--tablet : 48px;
+$gap-row--tablet : 48px;
+$gap-col--phone : 24px;
+$gap-row--phone : 24px;
+
+//side padding depending on the screen width
+$pad-side--xl : calc((100vw - #{$bp-xxl})/2);
+$pad-side--desk : 72px; 
+$pad-side--tablet : 48px;
+$pad-side--phone : 24px;
+
+//column number depending on the screen width
+$col-nb--desk : 12;
+$col-nb--tablet : 8;
+$col-nb--phone : 4;
+
+/* automatically update column width depending on value of variables above here */
+$col-width--xl : calc(((100vw - (#{$pad-side--xl} * 2)) - (#{$col-nb--desk} - 1) * #{$gap-col--desk}) / #{$col-nb--desk});
+
+$col-width--desk : calc(((100vw - (#{$pad-side--desk} * 2)) - (#{$col-nb--desk} - 1) * #{$gap-col--desk}) / #{$col-nb--desk});
+
+$col-width--tablet :  calc(((100vw - (#{$pad-side--tablet} * 2)) - (#{$col-nb--tablet} - 1) * #{$gap-col--tablet}) / #{$col-nb--tablet});
+
+$col-width--phone : calc(((100vw - (#{$pad-side--phone} * 2)) - (#{$col-nb--phone} - 1) * #{$gap-col--phone}) / #{$col-nb--phone});

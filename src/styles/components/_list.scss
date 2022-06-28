@@ -1,0 +1,50 @@
+/* LIST STYLE */
+.list{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 12px;
+
+    width: fit-content;
+    padding-left: 48px;
+
+    /* numbered list */
+    &--numbers{
+        counter-reset: list;
+
+        li{
+            counter-increment: list;
+            --font-number: var(--font-title);
+            //number style
+            &::marker{
+                content: "0" counter(list) ". ";
+                font-family: var(--font-number);
+            }
+        }
+
+        &-inverted{
+            li{
+                font-family: var(--font-title);
+                //number style
+                &::marker{
+                    font-family: 'Overpass'
+                }
+            }
+        }
+    }
+
+    /* bulleted list */
+    &--bullets{
+        li{
+            //bullet style
+            &::marker{
+                content: "• ";
+            }
+        }
+    }
+
+    //li style global
+    &__item{
+        width: fit-content;
+        position: relative;
+    }
+}

@@ -1,0 +1,45 @@
+.title{
+    --title: var(--fs-title);
+    
+    font-family: var(--font-title);
+    font-size: var(--title);
+    color: var(--color-title);
+    font-weight: 400;
+
+    &--sbt-1{
+        --title: var(--fs-subtitle-1);
+    }
+
+    &--sbt-2{
+        --title: var(--fs-subtitle-2);
+    }
+
+    &--1{
+        --title: var(--fs-title-1);
+    }
+
+    &--2{
+        --title: var(--fs-title-2);
+    }
+
+    &--3{
+        --title: var(--fs-title-3);
+    }
+
+    &--4{
+        --title: var(--fs-title-4);
+    }
+
+    &--5{
+        --title: var(--fs-title-5);
+    }
+
+    &--6{
+        --title: var(--fs-title-6);
+    }
+}
+
+p{
+    margin-bottom: 16px;
+    line-height: 1.4;
+}

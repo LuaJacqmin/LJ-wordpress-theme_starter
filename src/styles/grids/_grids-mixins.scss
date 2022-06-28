@@ -1,0 +1,98 @@
+/* apply a grid based on the mesures you set in Grids-Variable.scss */
+@mixin grid-full {
+    width: 100vw;
+    display: grid;
+
+    grid-template-columns: repeat(#{$col-nb--phone}, 1fr);
+    grid-column-gap: $gap-col--phone;
+    grid-row-gap: $gap-row--phone;
+
+    padding-left: $pad-side--phone;
+    padding-right: $pad-side--phone;
+
+    @media (min-width: $bp-xs){
+        grid-template-columns: repeat(#{$col-nb--tablet}, 1fr);
+        grid-column-gap: $gap-col--tablet;
+        grid-row-gap: $gap-row--tablet;
+
+        padding-left: $pad-side--tablet;
+        padding-right: $pad-side--tablet;
+    }
+
+    @media (min-width: $bp-xl){
+        grid-template-columns: repeat(#{$col-nb--desk}, 1fr);
+        grid-column-gap: $gap-col--desk;
+        grid-row-gap: $gap-row--desk;
+
+        padding-left: $pad-side--desk;
+        padding-right: $pad-side--desk;
+    }
+
+    @media (min-width: $bp-xxxl){
+        padding-left: $pad-side--xl;
+        padding-right: $pad-side--xl;
+    }
+}
+
+/* place an element using column layout. 
+        $gridstart = starting column of the element
+        $span = number of column element will take
+*/
+@mixin grid-column($gridStart, $span){
+    grid-column: $gridStart/ span $span;
+}
+
+/* set width of an element based on the grid columns. Size rendered in pixels*/
+//example : columnsWidth(6) set the size of an element as if it would take 6 columns width on the grid. 
+@mixin col-width($numCol){
+    width: calc((#{$col-width--phone} * #{$numCol}) + (#{$gap-col--phone} * (#{$numCol} - 1)));
+
+    @media (min-width: $bp-xs){
+        width: calc((#{$col-width--tablet} * #{$numCol}) + (#{$gap-col--tablet} * (#{$numCol} - 1)));
+    }
+
+    @media (min-width: $bp-xl){
+        width: calc((#{$col-width--desk} * #{$numCol}) + (#{$gap-col--desk} * (#{$numCol} - 1)));
+    }
+
+    @media (min-width: $bp-xxxl){
+        width: calc((#{$col-width--xl} * #{$numCol}) + (#{$gap-col--desk} * (#{$numCol} - 1)));
+    }
+}
+
+/* set width of an element based on the grid columns. Size rendered in pixels*/
+//example : columnsWidth(6) set the size of an element as if it would take 6 columns and 6 gaps width on the grid. 
+@mixin col-width-onegap($numCol){
+    width: calc((#{$col-width--phone} * #{$numCol}) + (#{$gap-col--phone} * #{$numCol}));
+
+    @media (min-width: $bp-xs){
+        width: calc((#{$col-width--tablet} * #{$numCol}) + (#{$gap-col--tablet} * #{$numCol}));
+    }
+
+    @media (min-width: $bp-xl){
+        width: calc((#{$col-width--desk} * #{$numCol}) + (#{$gap-col--desk} * #{$numCol}));
+    }
+
+    @media (min-width: $bp-xxxl){
+        width: calc((#{$col-width--xl} * #{$numCol}) + (#{$gap-col--desk} * #{$numCol}));
+    }
+}
+
+/* set a classic grid-column + force the element to take width "fill available"*/
+@mixin grid-width($gridStart, $span){
+    grid-column: $gridStart/ span $span;
+
+    width: calc((#{$col-width--phone} * #{$span}) + (#{$gap-col--phone} * (#{$span} - 1)));
+
+    @media (min-width: $bp-xs){
+        width: calc((#{$col-width--tablet} * #{$span}) + (#{$gap-col--tablet} * (#{$span} - 1)));
+    }
+
+    @media (min-width: $bp-xl){
+        width: calc((#{$col-width--desk} * #{$span}) + (#{$gap-col--desk} * (#{$span} - 1)));
+    }
+
+    @media (min-width: $bp-xxxl){
+        width: calc((#{$col-width--xl} * #{$span}) + (#{$gap-col--desk} * (#{$span} - 1)));
+    }
+}

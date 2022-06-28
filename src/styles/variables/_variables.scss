@@ -1,0 +1,108 @@
+/* imports */
+@font-face {
+    font-family: "Matiot";
+    src: url("@/fonts/matiot.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Overpass";
+    src:url("@/fonts/Overpass-VariableFont_wght.ttf") format("ttf"),
+
+}
+
+@font-face {
+    font-family: "Fog";
+    src:url("@/fonts/FogtwoNo5.otf") format("opentype"),
+
+}
+
+/* FONTS */
+$font-prim: 'Matiot', 'Overpass';
+$font-second: 'Overpass', sans-serif;
+$font-third: 'Fog', serif;
+
+/* FONT SIZE */
+//the ratio is 1.333.
+//you can just chose fs-r size and others will adapt automatically
+$fs-s : 0.75rem;
+$fs-r : 20px;
+$fs-m : 1.333rem;
+$fs-l : 1.777rem;
+$fs-xl : 2.369rem;
+$fs-2xl : 3.157rem;
+$fs-3xl: 4.209rem;
+$fs-4xl : 5.61rem;
+$fs-5xl: 7.478rem;
+$fs-6xl: 9.969rem;
+
+/* COLORS */
+//blacks and whites
+$black: #001A28;
+$white: rgb(245, 245, 245);
+$grey-1: darken($white, 3%);
+$grey-2: darken($white, 10%);
+$grey-3: darken($white, 30%);
+$grey-4: darken($white, 50%);
+
+//primary color and alterations
+$clr-prim: #415495;
+$clr-prim--darker: #2A3660;
+$clr-prim--lighter: #E2E6F3;
+$clr-prim--saturated: #0030D6;
+//----
+$clr-prim-10: #13182B;
+$clr-prim-20: #222C4E;
+$clr-prim-30: #324072;
+$clr-prim-40: #415495;
+$clr-prim-50: #556AB5;
+$clr-prim-60: #7889C4;
+$clr-prim-70: #9CA8D4;
+$clr-prim-80: #BFC7E3;
+$clr-prim-90: #E3E6F3;
+
+//secondary color and alterations
+$clr-second: #FFBD46;
+$clr-second--darker: #F9A000;
+$clr-second--lighter: #FFF4DF;
+$clr-second--saturated: #FFBD46;
+//----
+$clr-second-10: #472E00;
+$clr-second-20: #7A4F00;
+$clr-second-30: #AD7000;
+$clr-second-40: #E09000;
+$clr-second-50: #FFAB14;
+$clr-second-60: #FFBD46;
+$clr-second-70: #FFD07A;
+$clr-second-80: #FFE2AD;
+$clr-second-90: #FFF4E0;
+
+//tertiary color and alterations
+$clr-third: #75D2C0;
+$clr-third--darker: #3EBDA4;
+$clr-third--lighter: #D9F2ED;
+$clr-third--saturated: #48FFDC;
+//----
+$clr-third-10: #12362F;
+$clr-third-20: #1E5C50;
+$clr-third-30: #2B8372;
+$clr-third-40: #37A993;
+$clr-third-50: #4EC5AE;
+$clr-third-60: #75D2C0;
+$clr-third-70: #9BDED1;
+$clr-third-80: #C1EBE3;
+$clr-third-90: #E8F7F4;
+
+//others 
+$clr-warning : #e6a55c;
+$clr-error :  #e75a55;
+$clr-valid :  #7aecaa;
+
+//breakpoints
+$bp-xxs: 480px;
+$bp-xs: 600px;
+$bp-s: 720px;
+$bp-m: 840px;
+$bp-l: 960px;
+$bp-xl: 1080px;
+$bp-xxl: 1200px;
+$bp-xxxl: 1320px;

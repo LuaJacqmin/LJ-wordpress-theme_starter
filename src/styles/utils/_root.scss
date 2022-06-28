@@ -1,0 +1,54 @@
+/* normalize and root */
+// ---------- root -----------
+:root{
+    --color-text: #{$clr-prim-10};
+    --color-title: #{$clr-prim--darker};
+    --color-link: #{$clr-second};
+    --color-link-2: #{$clr-third};
+    --color-link-external: #{$clr-prim};
+    --color-btn: #{$clr-third-10};
+    --color-btn-2: #{$clr-prim-70};
+    --color-deco-title: #{$clr-prim-90};
+    --color-alternate: #{$clr-second};
+
+    --fs-body: #{$fs-r};
+    --fs-subtitle-1: #{$fs-r};
+    --fs-subtitle-2: #{$fs-m};
+    --fs-title: #{$fs-l};
+    --fs-title-1: #{$fs-xl};
+    --fs-title-2: #{$fs-2xl};
+    --fs-title-3: #{$fs-3xl};
+    --fs-title-4: #{$fs-4xl};
+    --fs-title-5: #{$fs-5xl};
+    --fs-title-6: #{$fs-6xl};
+
+    --font-title: #{$font-prim};
+    --font-text: #{$font-second};
+}
+
+// ---------- normalize -------------
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    outline: transparent;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--color-text);
+    font-family: var(--font-text);
+    font-size: var(--fs-body);
+    overflow-x: hidden;
+
+    ::selection {
+        background-color: $clr-prim-50;
+        color: $clr-second--saturated;
+    }
+}
+
+main{
+}
