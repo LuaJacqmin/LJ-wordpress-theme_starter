@@ -1,2 +1,52 @@
 .slider{
+    position: relative;
+    padding-bottom: 48px;
+
+    &__list{
+        display: flex;
+        gap: 16px;
+        overflow: scroll hidden;
+        padding-left: 48px;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+
+    &__element{
+        padding: 24px;
+        background-color: $clr-second--lighter;
+        user-select: none;
+    }
+
+    &__nav{
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translate(-50%);
+
+        display: flex;
+        gap: 48px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__arrow{
+        cursor: pointer;
+        user-select: none;
+    }
 }
+
+/* 
+make sure your slider has this structure =>
+<div class="slider" data-slider="slider1">
+        <ul class="slider__list" data-slider="slider1">
+            <li class="slider__element">this is a slider element</li>
+        </ul>
+        <div class="slider__nav">
+            <span data-slider="slider1" data-direction="prev" class="slider__arrow slider__arrow--prev">Prev</span>
+            <span data-slider="slider1" data-direction="next" class="slider__arrow slider__arrow--next">Next</span>
+        </div>
+    </div>
+
+*/

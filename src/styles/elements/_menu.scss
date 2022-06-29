@@ -6,6 +6,8 @@
     width: 100%;
     height: 100%;
 
+    pointer-events: none;
+
     &__nav{
         width: 100vw;
         height: 100vh;
@@ -19,6 +21,7 @@
     
         transform: translate(100%);
         transition: .2s all ease-out;
+        pointer-events: initial;
 
         &--open{
             transform: translate(0);
@@ -29,5 +32,6 @@
         position: fixed;
         top: 24px;
         right: 24px;
+        pointer-events: initial;
     }
 }
