@@ -1,0 +1,19 @@
+.logo{
+    width: 60px;
+    height: 60px;
+
+    overflow: hidden;
+    background-image: url(@/logo/logo.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &__link{
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        text-indent: 100%;
+        white-space: nowrap;
+    }
+}
