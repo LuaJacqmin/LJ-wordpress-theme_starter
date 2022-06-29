@@ -13,21 +13,9 @@
 
         li{
             counter-increment: list;
-            --font-number: var(--font-title);
             //number style
             &::marker{
                 content: "0" counter(list) ". ";
-                font-family: var(--font-number);
-            }
-        }
-
-        &-inverted{
-            li{
-                font-family: var(--font-title);
-                //number style
-                &::marker{
-                    font-family: 'Overpass'
-                }
             }
         }
     }

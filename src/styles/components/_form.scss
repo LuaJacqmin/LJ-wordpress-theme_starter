@@ -1,87 +1,329 @@
-//cf7 /form
-.wpcf7{
-    &-form, .form{
+.form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+
+    padding: 48px 24px;
+
+    
+    .input-wrapper{
+        position: relative;
+
         display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        padding: 0 $pad-side--phone;
-    
-        font-family: $font-third;
-    
-    
-        input[type="text"], input[type="email"], input[type="tel"]{
-            height: 32px;
-            padding: 4px 4px 4px 12px;
-            width: 100%;
-            max-width: 480px;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    label{
+        user-select: none;
+        color: var(--input-label);
+        position: relative;
+        padding-right: 12px;
+        order: -1;
+    }
+
+    .input-text{
+        order: 1;
+        font-size: $fs-s;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="mail"],
+    input[type="url"],
+    textarea{
+        font-family: $font-second;
+        font-size: $fs-r;
+
+        padding: 8px 12px 8px 24px;
+        background-color: var(--input-bg);
+        border: 2px solid var(--input-brd);
+
+        transition: .3s all ease-out;
+
+        &::placeholder{
+            transition: .3s all ease-out;
+        }
+
+        &:hover{
+            --input-bg: #{$clr-prim-90};
+            --input-brd: #{$clr-prim-50};
+
+            &::placeholder{
+                transform: translateY(20%) rotateX(90deg);
+                opacity: 0;
+            }
+        }
+
+        &:active, &:focus{
+            --input-bg: #{$white};
+            --input-brd: #{$clr-prim-30};
+
+            &::placeholder{
+                transform: translateY(20%) rotateX(90deg);
+                opacity: 0;
+            }
+        }
+    }
+
+    //make sure your checkboxes and radios are followed by a label, and that the ID of the input is the same as the "for" attribute of the label
+    input[type="checkbox"]{
+        display: none;
+
+        +label{
+            --input-bg: #{$clr-prim-90};
+            padding: 8px 12px 8px 32px;
+
+            cursor: pointer;
+
             transition: .2s all ease-out;
 
-            &:hover{
-                box-shadow: 0 0 1px 1px $clr-prim--saturated;       
-                &::placeholder{
-                    color: $clr-prim--saturated;          
-                }
-            }
-    
-            &::placeholder{
+            &::before{
+                content: "";
+                position: absolute;
+
+                width: 16px;
+                height: 16px;
+                border-radius: 5px;
+                border: 1px solid var(--input-brd);
+
+                top: 50%;
+                left: 2px;
+                transform: translateY(-50%);
+
                 transition: .2s all ease-out;
-                font-family: $font-second;           
             }
 
-            &:active, &:focus{
-                background-color: $clr-prim-90;
-                &::placeholder{
-                    transform: translateY(32px);                
-                }
+            &::after{
+                content: "";
+                position: absolute;
+
+                width: 24px;
+                height: 24px;
+                border-radius: 5px;
+
+                background-image: url('@/icon/check.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) scale(0);
+
+                transition: .2s all ease-out;
             }
-        }
-    
-        textarea{
-            padding: 4px 4px 4px 12px;
-            width: 100%;
-            max-width: 480px;
 
             &:hover{
-                box-shadow: 0 0 1px 1px $clr-prim--saturated;       
-                &::placeholder{
-                    color: $clr-prim--saturated;          
+                transform: translateY(-3px);
+            }
+        }
+
+        &:checked{
+            +label, +span{
+                &::before{
+                    --input-brd: var(--input-bg);    
+                    background-color: var(--input-bg);
                 }
-            }
-    
-            &::placeholder{
-                transition: .2s all ease-out;            
-            }
-    
-            &:active, &:focus{
-                background-color: $clr-prim-90;
-                &::placeholder{
-                    transform: translateY(32px);                
+
+                &::after{
+                    transform: translateY(-50%) scale(1);
                 }
             }
         }
+    }  
     
-        &__input-wrapper{
-            width: 100%;
-            max-width: 480px;
-            display: flex;
-            flex-flow: column;
-            gap: 4px;
+    input[type="radio"]{
+        display: none;
+
+        +label{
+            --input-bg: #{$clr-prim-90};           
+            padding: 8px 12px 8px 32px;
+
+            cursor: pointer;
+
+            transition: .2s all ease-out;
+
+            &::before{
+                content: "";
+                position: absolute;
+
+                width: 16px;
+                height: 16px;
+                border-radius: 100%;
+                border: 1px solid var(--input-brd);
+
+                top: 50%;
+                left: 2px;
+                transform: translateY(-50%);
+
+                transition: .2s all ease-out;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+
+                width: 24px;
+                height: 24px;
+                border-radius: 5px;
+
+                background-image: url('@/icon/check.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) scale(0);
+
+                transition: .2s all ease-out;
+            }
+
+            &:hover{
+                transform: translateY(-3px);
+            }
+        }
+
+        &:checked{
+            +label{
+                &::before{
+                    --input-brd: var(--input-bg);                  
+                    background-color: var(--input-bg);
+                }
+
+                &::after{
+                    transform: translateY(-50%) scale(1);
+                }
+            }
         }
     }
-    
-    &-submit{
-        align-self: center;
+
+    input[type="range"]{
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 3px;
+        border-radius: 5px;
+        background: var(--input-slider);
+        outline: transparent;
+        transition: .2s all ease-out;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 100%;
+            background: var(--input-handle);
+            cursor: pointer;
+            transition: .2s all ease-out;
+        }
+        
+        &::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: var(--input-handle);
+            cursor: pointer;
+            transition: .2s all ease-out;
+        }
+
+        
+        &:hover {
+            &::-webkit-slider-thumb {
+                transform: scale(1.1);
+            }
+            
+            &::-moz-range-thumb {
+                transform: scale(1.1);
+            }
+        }
     }
 
-    &-response-output{
-        max-width: 400px;
+    //make sure your inputs file are followed by a label, and that the ID of the input is the same as the "for" attribute of the label
+    input[type="file"]{
+        display: none;
+
+        +label{
+            @extend .btn;
+            --color-btn: #{$clr-prim-50};
+            color: white;
+
+            &:hover{
+                --color-btn: #{$clr-prim-80} !important;
+                color: $clr-prim--darker;
+            }
+        }
     }
 
-    &-not-valid-tip{
-        font-size: 15px;
-        text-align: right;
-        color: $clr-error;
+    //make sure your color file are in a div followed by a label, and that the ID of the input is the same as the "for" attribute of the label
+    input[type="color"]{
+        -webkit-appearance: none;
+        appearance: none;
+        width: 32px;
+        height: 32px;
+
+        background-color: transparent;
+
+        cursor: pointer;
+
+        transition: .2s all ease-out;
+
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        transform: translateY(-50%);
+
+        z-index: 1;
+
+        +label{
+            cursor: pointer;
+
+            padding: 8px 12px 8px 40px;
+            background-color: $white;
+            transition: .2s all ease-out;
+        }
+
+        &:hover, &:focus{
+            transform: translateY(calc(-50% - 5px));
+
+            +label{
+                transform: translateY(-5px);
+            }
+        }
     }
+
+    input[type="number"]{
+        --input-bg: #{$clr-prim-80};
+        --input-brd: #{$clr-prim-80};
+
+        width: 125px;
+        padding: 4px 4px 4px 12px;
+        background-color: var(--input-bg);
+        border: 2px solid var(--input-brd);
+        font-family: $font-second;
+        font-size: $fs-r;
+
+        transition: .2s all ease-out;
+
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button{
+            // -webkit-appearance: none;
+            // appearance: none;
+
+            width: 120px;
+            height: 32px;
+            background-color: red;
+        }
+
+        &:hover{
+            --input-bg: #{$clr-prim-90};
+            --input-brd: #{$clr-prim-90};
+        }
+    }
+
+    //input date, week, etc are not stylised
 }

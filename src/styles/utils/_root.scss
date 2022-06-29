@@ -4,12 +4,8 @@
     --color-text: #{$clr-prim-10};
     --color-title: #{$clr-prim--darker};
     --color-link: #{$clr-second};
-    --color-link-2: #{$clr-third};
     --color-link-external: #{$clr-prim};
-    --color-btn: #{$clr-third-10};
-    --color-btn-2: #{$clr-prim-70};
-    --color-deco-title: #{$clr-prim-90};
-    --color-alternate: #{$clr-second};
+    --color-btn: #{$clr-third-80};
 
     --fs-body: #{$fs-r};
     --fs-subtitle-1: #{$fs-r};
@@ -24,6 +20,12 @@
 
     --font-title: #{$font-prim};
     --font-text: #{$font-second};
+
+    --input-bg: #{$clr-prim-80};
+    --input-brd: #{$clr-prim-80};
+    --input-label: #{clr-prim--darker};
+    --input-slider: #{$clr-prim-50};
+    --input-handle: #{$clr-prim--darker};
 }
 
 // ---------- normalize -------------

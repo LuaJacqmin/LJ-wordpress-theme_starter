@@ -1,2 +1,13 @@
 .hero{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+    padding: 96px 0;
+
+    &__title{
+        text-align: center;
+    }
 }

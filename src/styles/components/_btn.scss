@@ -1,36 +1,25 @@
 .btn{
-    font-family: $font-prim;
-    font-size: $fs-m;
-    font-weight: 800;
-    color:transparent;
-    width: fit-content;
+    font-family: $font-second;
+    font-size: $fs-r;
     padding: 8px 12px;
-    background-color: var(--color-btn);
-    background-image: linear-gradient(var(--color-btn) 50%, var(--color-btn-2) 50%);
 
-    background-size: 100% 200%;
-    background-repeat: no-repeat;
-    background-position: top;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    
-    transition: .3s all ease-out;
+    background: var(--color-btn);
+
+    outline: transparent;
     cursor: pointer;
 
-    position: relative;
-    z-index: 0;
+    transition: .3s all ease-out;
 
     &:hover{
-        background-color: var(--color-btn-2);
-        background-position: bottom;
+        --color-btn: #{$clr-third-50}
     }
 
     &:active{
-        transform: translateY(-3px);
+        transform: translateY(-5px);
     }
 
     &:disabled{
-        --color-btn: #{$grey-3};
+        --color-btn: #{$grey-2};
         pointer-events: none;
     }
 }
